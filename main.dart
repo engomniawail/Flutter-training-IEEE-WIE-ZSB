@@ -1,21 +1,11 @@
+// Ask the user for a string and print out whether this string is a palindrome or not.
 import 'dart:io';
-
 void main() {
-  // Map of birthdays of people
-  Map<String, Object> birthdays = {
-    "Albert Einstein": "9/01/2002",
-    "Benjamin Franklin": "07/01/1706",
-    "Ada Lovlace": "5/5/2002",
-  };
+  print("Enter the string:-");
+  String input =stdin.readLineSync()!.toLowerCase();
+  String revinput = input.split('').reversed.join('');
+  input ==revinput
+      ? print("The string is palindrome")
+      : print("The string is not palindrome");
 
-  print("\nHello there!. We know the birthdays of the following people: \n");
-
-  birthdays.forEach((key, value) {
-    print(key);
-  });
-
-  stdout.write("\nWho's birthday do you want to know? ");
-  String? choice = stdin.readLineSync();
-
-  print("\n$choice's birthday is ${birthdays[choice]}\n");
 }
